@@ -124,6 +124,37 @@ docker-compose up -d
 si deseamos que comience como un daemon y de esta forma no atarlo a una terminal
 
 
+## Sincronizacion de servidores
+La sincronizacion de servidores en peertube se hace mediante lo que se llama 
+federacion. Para lograr sincronizarte con un servidor hay que seguir los
+siguientes pasos:
+- Iniciar sesion con un usuario administrador de la instancia
+- Ir a `Administration` -> `Federation` -> `Following`
+- Presionar el boton de `Follow` e ingresar el `root@` seguido del dominio de
+la otra instancia. Peertube dice que se puede utilizar solo el dominio de la
+otra instancia pero en nuestra experiencia esto no funciona
+- Listo, nuestra instancia deberia estar siguiendo a la otra con lo que pronto
+se sincronizaran los videos
 
+## Analisis de paquetes con Wireshark
+El mayor problema que surge aca es que la comunicacion tanto entre servidor y
+navegador, como entre servidores se encuentra encriptado ya que se usa `HTTPS`
+por lo que tendremos que realizar cierta configuracion ambos en wireshark y en
+el navegador. Para esto vamos a realizar los siguientes pasos:
+- Cerrar todos los browsers que tengamos abiertos
+- En una terminal correr, modificando `$pathAbsoluto` por un path que querramos:
+```bash
+SSLKEYLOGFILE=$pathAbsoluto/sslkeylog.log google-chrome
+o
+SSLKEYLOGFILE=$pathAbsoluto/sslkeylog.log firefox
+```
+  Esto nos abrira un google chrome o firefox que logea las claves generadas en la 
+  comunicacion ssl en un archivo `sslkeylog.log` en la carpeta que pusimos
+- Abrir `wireshark`
+- Ir al menu a `Edit` -> `Preferences` -> `protocols` -> `TLS`(
+en versiones viejas puede aparecer como `SSL`)
+- Establecer en `(Pre)-Master-Secret log filename` el archivo que seteamos
+para la comunicacion encriptada del navegador
 
-
+De esta forma deberiamos ser capaces de ver los paquetes encriptados entre
+chrome y nuestra instancia de peertube
