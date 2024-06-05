@@ -158,3 +158,11 @@ para la comunicacion encriptada del navegador
 
 De esta forma deberiamos ser capaces de ver los paquetes encriptados entre
 chrome y nuestra instancia de peertube
+
+Tambien podemos analizar la interfaz virtual de docker para poder ver paquetes
+que el nginx interno a la solucion envia desencriptados al container de 
+peertube para poder analizar algunos paquetes extra
+
+Desgraciadamente, es muy dificil acceder a los paquetes salientes de la 
+instancia de peertube ya que salen encriptados y no tenemos una forma sencilla,
+como en el caso de chrome/firefox de desencriptarlos
