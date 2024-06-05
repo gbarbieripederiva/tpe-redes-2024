@@ -124,17 +124,14 @@ docker-compose up -d
 ```
 si deseamos que comience como un daemon y de esta forma no atarlo a una terminal
 
-## Primer login
+## Administracion
 La primera vez que hacemos login nos va a aparecer un cartel donde nos invita
 a configurar nuestra instancia. Se puede simplemente ignorar pero esta bueno
-aprovechar este momento para revisar las configuracion y modificar lo deseado
+aprovechar este momento para revisar las configuracion y modificar lo deseado.
+En cualquier otro momento podremos llegar a este mismo panel desde 
+`administracion`
 
-### Livestream
-El livestream no viene habilitado por defecto en peertube. Para habilitarlo hay
-que ir a `administration` -> `configuration` -> `live streaming` -> 
-`allow live streaming`
-
-## Sincronizacion de servidores
+### Sincronizacion de servidores
 La sincronizacion de servidores en peertube se hace mediante lo que se llama 
 federacion. Para lograr sincronizarte con un servidor hay que seguir los
 siguientes pasos:
@@ -145,6 +142,17 @@ la otra instancia. Peertube dice que se puede utilizar solo el dominio de la
 otra instancia pero en nuestra experiencia esto no funciona
 - Listo, nuestra instancia deberia estar siguiendo a la otra con lo que pronto
 se sincronizaran los videos
+
+### Livestream
+El livestream no viene habilitado por defecto en peertube. Para habilitarlo hay
+que ir a `administration` -> `configuration` -> `live streaming` -> 
+`allow live streaming`.
+
+### Plugins y temas
+Desde la pagina de `administracion` podemos tambien agregar plugins/themes 
+desde la tab con el mismo nombre. Esto es tan sencillo como buscar el que 
+deseamos, presionar instalar y refrescar la pagina una vez termina de instalar
+para ver los cambios.
 
 ## Analisis de paquetes con Wireshark
 El mayor problema que surge aca es que la comunicacion tanto entre servidor y
