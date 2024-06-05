@@ -27,7 +27,8 @@ que tengamos la IP publica con un dominio nuestro apuntando a ella y que la
 misma se haya correctamente propagado. Esto se puede realizar a traves de 
 paginas como [https://dnschecker.org](https://dnschecker.org). 
 Tambien es clave revisar que nuestro servidor `peertube` tenga expuesto el 
-puerto `80` y `443`(los puertos de `http` y `https` correspondientemente)
+puerto `80` y `443`(los puertos de `http` y `https` correspondientemente).
+Si se desea tener livestreaming hay que exponer tambien el puerto `1935`
 
 ## Configuracion
 Una vez alcanzado este momento podemos simplemente seguir la guia que 
@@ -55,16 +56,16 @@ alcance de esto esta fuera del proyecto este.
 Volviendo a los archivos de configuracion, deberemos abrir el archivo `.env`. 
 En el mismo habra que hacer algunos cambios. Se debe buscar los siguientes
 textos y reemplazarlos acorde:
-- "<MY POSTGRES USERNAME>": Esto puede ser cualquier username siempre que sea
+- "\<MY POSTGRES USERNAME\>": Esto puede ser cualquier username siempre que sea
 un string continuo(sin espacios, caracteres especiales, etc)
-- "<MY POSTGRES PASSWORD>": Lo mismo que para username
+- "\<MY POSTGRES PASSWORD\>": Lo mismo que para username
 - "$POSTGRES_USER": Este tiene que ser el mismo string que el username puesto
 anteriormente. En algunas versiones de docker este paso no es necesario
 - "$POSTGRES_PASSWORD": Lo mismo ocurre aqui con la contraseña
-- "<MY DOMAIN>": Este se debe completar con el dominio que previamete adquirimos
+- "\<MY DOMAIN\>": Este se debe completar con el dominio que previamete adquirimos
 y que apunta nuestra futura instancia de peertube
-- "<MY EMAIL ADDRESS>": admin@<MY DOMAIN>
-- "<MY PEERTUBE SECRET>": Este campo se debe generar utilizando el siguiente
+- "\<MY EMAIL ADDRESS\>": admin@<MY DOMAIN>
+- "\<MY PEERTUBE SECRET\>": Este campo se debe generar utilizando el siguiente
 comando: `openssl rand -hex 32`
 
 Con estos pasos completos nos enfocaremos en obtener los certificados de 
