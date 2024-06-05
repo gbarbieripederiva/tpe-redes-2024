@@ -64,7 +64,7 @@ anteriormente. En algunas versiones de docker este paso no es necesario
 - "$POSTGRES_PASSWORD": Lo mismo ocurre aqui con la contraseña
 - "\<MY DOMAIN\>": Este se debe completar con el dominio que previamete adquirimos
 y que apunta nuestra futura instancia de peertube
-- "\<MY EMAIL ADDRESS\>": admin@<MY DOMAIN>
+- "\<MY EMAIL ADDRESS\>": admin@\<MY DOMAIN\>
 - "\<MY PEERTUBE SECRET\>": Este campo se debe generar utilizando el siguiente
 comando: `openssl rand -hex 32`
 
