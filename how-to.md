@@ -124,6 +124,15 @@ docker-compose up -d
 ```
 si deseamos que comience como un daemon y de esta forma no atarlo a una terminal
 
+## Primer login
+La primera vez que hacemos login nos va a aparecer un cartel donde nos invita
+a configurar nuestra instancia. Se puede simplemente ignorar pero esta bueno
+aprovechar este momento para revisar las configuracion y modificar lo deseado
+
+### Livestream
+El livestream no viene habilitado por defecto en peertube. Para habilitarlo hay
+que ir a `administration` -> `configuration` -> `live streaming` -> 
+`allow live streaming`
 
 ## Sincronizacion de servidores
 La sincronizacion de servidores en peertube se hace mediante lo que se llama 
